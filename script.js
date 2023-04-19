@@ -38,13 +38,10 @@ function playRound(playerSelection,computerSelection){
 function game() {
     let playerScore = 0;
     let computerScore = 0;
-
-    for(let i = 0 ; i < 5; i++){
-        console.log(`Round:${i+1}`)
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        const result = playRound(playerSelection,computerSelection);
-        if(result === 'win'){
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    const result = playRound(playerSelection,computerSelection);
+    if(result === 'win'){
             playerScore++;
             console.log(`You win ${playerSelection} beats ${computerSelection}`)
             console.log(`Your-Score:${playerScore} Computer-Score:${computerScore}`)
@@ -57,13 +54,12 @@ function game() {
             console.log(`It's a tie you both choose ${playerSelection}`)
             console.log(`Your-Score:${playerScore} Computer-Score:${computerScore}`)
         }
-    }
     console.log("*****************************")
     if(playerScore > computerScore){
         console.log("Congratulation you won with a total Score of:")
         console.log(`Your-final-Score:${playerScore},Computer-final-Score:${computerScore}`)
     } else {
-        console.log("Oops! Bad luck you lose")
+        console.log("Oops! Better luck next time")
         console.log(`Your-final-Score:${playerScore},Computer-final-Score:${computerScore}`)
     }
 }
