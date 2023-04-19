@@ -63,4 +63,3 @@ function game() {
         console.log(`Your-final-Score:${playerScore},Computer-final-Score:${computerScore}`)
     }
 }
-game();
