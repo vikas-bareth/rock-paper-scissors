@@ -1,3 +1,21 @@
+//grabbing buttons
+const rockBtn = document.querySelector('#rockBtn')
+const paperBtn = document.querySelector('#paperBtn')
+const scissorsBtn = document.querySelector('#scissorsBtn')
+//grabbing scores div
+const playerSign = document.querySelector('#playerSign')
+const computerSign = document.querySelector('#computerSign')
+//grabbing scores paragraphs
+const playerScorePara = document.querySelector('#playerScore')
+const computerScorePara = document.querySelector('#computerScore')
+const scoreInfo = document.querySelector('#scoreInfo')
+const scoreMessage = document.querySelector('#scoreMessage')
+//grabbing overlaymodal
+const endgameModal = document.getElementById('endgameModal')
+const endgameMsg = document.getElementById('endgameMsg')
+const overlay = document.getElementById('overlay')
+const restartBtn = document.getElementById('restartBtn')
+
 const choices = ['rock','paper','scissors'];
 let roundWinner = '';
 let playerScore = 0;
@@ -38,29 +56,9 @@ function playRound(playerSelection,computerSelection){
 }
 
 
-//grabbing buttons
-const rockBtn = document.querySelector('#rockBtn')
-const paperBtn = document.querySelector('#paperBtn')
-const scissorsBtn = document.querySelector('#scissorsBtn')
-//grabbing scores div
-const playerSign = document.querySelector('#playerSign')
-const computerSign = document.querySelector('#computerSign')
-//grabbing scores paragraphs
-const playerScorePara = document.querySelector('#playerScore')
-const computerScorePara = document.querySelector('#computerScore')
-const scoreInfo = document.querySelector('#scoreInfo')
-const scoreMessage = document.querySelector('#scoreMessage')
-
-const endgameModal = document.getElementById('endgameModal')
-const endgameMsg = document.getElementById('endgameMsg')
-const overlay = document.getElementById('overlay')
-const restartBtn = document.getElementById('restartBtn')
-
-
 rockBtn.addEventListener('click',() => handleClick('rock'))
 paperBtn.addEventListener('click',() => handleClick('paper'))
 scissorsBtn.addEventListener('click',() => handleClick('scissors'))
-
 restartBtn.addEventListener('click', restartGame)
 overlay.addEventListener('click', closeEndgameModal)
 
@@ -142,46 +140,3 @@ function setFinalMessage() {
     endgameModal.classList.remove('active')
     overlay.classList.remove('active')
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function game() {
-//     let playerScore = 0;
-//     let computerScore = 0;
-//     const playerSelection = getPlayerChoice();
-//     const computerSelection = getComputerChoice();
-//     const result = playRound(playerSelection,computerSelection);
-//     if(result === 'win'){
-//             playerScore++;
-//             console.log(`You win ${playerSelection} beats ${computerSelection}`)
-//             console.log(`Your-Score:${playerScore} Computer-Score:${computerScore}`)
-//         } else if (result === 'lose'){
-//             computerScore++
-//             console.log(`You lose ${computerSelection} beats ${playerSelection}`);
-//             console.log(`Your-Score:${playerScore} Computer-Score:${computerScore}`)
-//             ;
-//         } else {
-//             console.log(`It's a tie you both choose ${playerSelection}`)
-//             console.log(`Your-Score:${playerScore} Computer-Score:${computerScore}`)
-//         }
-//     console.log("*****************************")
-//     if(playerScore > computerScore){
-//         console.log("Congratulation you won with a total Score of:")
-//         console.log(`Your-final-Score:${playerScore},Computer-final-Score:${computerScore}`)
-//     } else {
-//         console.log("Oops! Better luck next time")
-//         console.log(`Your-final-Score:${playerScore},Computer-final-Score:${computerScore}`)
-//     }
-// }
